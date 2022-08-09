@@ -9,20 +9,24 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function addContador() {
-  if (contador === 10) {
+  if (contador > 9) {
+    textCont.style.color = "red";
     alert("Contador atingiu o valor máximo!");
     return;
   }
+  textCont.style.color = "#6d4b02";
   contador++;
   localStorage.setItem('contador', contador);
   textCont.textContent = localStorage.getItem('contador');
 }
 
 function subContador() {
-  if (contador === -10) {
+  if (contador < -9) {
+    textCont.style.color = "red";
     alert("Contador atingiu o valor mínimo!");
     return;
   }
+  textCont.style.color = "#6d4b02";
   contador--;
   localStorage.setItem('contador', contador);
   textCont.textContent = localStorage.getItem('contador');
