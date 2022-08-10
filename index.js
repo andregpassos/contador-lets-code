@@ -8,16 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
   textCont.textContent = localStorage.getItem('contador');
 })
 
+function updateTextContador() {
+  textCont.style.color = "#6d4b02";
+  localStorage.setItem('contador', contador);
+  textCont.textContent = localStorage.getItem('contador');
+}
+
 function addContador() {
   if (contador > 9) {
     textCont.style.color = "red";
     alert("Contador atingiu o valor máximo!");
     return;
   }
-  textCont.style.color = "#6d4b02";
   contador++;
-  localStorage.setItem('contador', contador);
-  textCont.textContent = localStorage.getItem('contador');
+  updateTextContador();
 }
 
 function subContador() {
@@ -26,10 +30,8 @@ function subContador() {
     alert("Contador atingiu o valor mínimo!");
     return;
   }
-  textCont.style.color = "#6d4b02";
   contador--;
-  localStorage.setItem('contador', contador);
-  textCont.textContent = localStorage.getItem('contador');
+  updateTextContador();
 }
 
 buttonPlus.addEventListener('click', () => addContador());
@@ -37,6 +39,5 @@ buttonMinus.addEventListener('click', () => subContador());
 
 function resetContador() {
   contador = 0;
-  localStorage.setItem('contador', contador);
-  textCont.textContent = localStorage.getItem('contador');
+  updateTextContador();
 }
