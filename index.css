@@ -31,7 +31,7 @@ h1 {
 .textCont {
   color: #6d4b02;
   text-align: center;
-  font-family: monospace;
+  font-family: 'Courier New', Courier, monospace;
   font-size: 70px;
   margin: 30px;
 }
