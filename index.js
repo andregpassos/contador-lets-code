@@ -5,7 +5,8 @@ let textCont = document.getElementById("textContador");
 let contador = localStorage.getItem('contador');
 
 document.addEventListener('DOMContentLoaded', () => {
-  textCont.textContent = localStorage.getItem('contador');
+  if (localStorage.getItem('contador') !== null) 
+    textCont.textContent = localStorage.getItem('contador');
 })
 
 function updateTextContador() {
